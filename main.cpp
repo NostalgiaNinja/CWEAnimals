@@ -49,9 +49,8 @@ extern "C"
 		int color;
 	};
 
-	//#pragma region allows code-folding in Visual Studio C++ - much like #region in C#
-	//Animal removed for code cleanliness on Github, but guide will explain how to use #pragma region
-#include "crab_hopethisworks.mini"
+	//add the file in-scope after the structs so that you can have clean code.
+	#include "crab.mini"
 	//NINJA types - Texture name and textlist (derives from texture name)
 	NJS_TEXNAME texname_CUSTOMFRUIT[88];
 	NJS_TEXLIST texlist_CUSTOMFRUIT = { arrayptrandlength(texname_CUSTOMFRUIT) };
