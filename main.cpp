@@ -107,6 +107,9 @@ extern "C"
 		//IMPORTANT - ASSIGN THIS OTHERWISE THE IMPORT MODEL WON'T WORK!
 		pathStr = std::string(path);
 
+		//This gives the mod the ability to add more than 1 animal into the mod.  Fixes issue #1 on github
+		WriteData((int*)0x00548C7D, (int)0x9090C031);
+
 		HMODULE h = GetModuleHandle(L"CWE");
 		RegisterChaoFruit = (int (*)(NJS_OBJECT * model, NJS_TEXLIST * texlist, ChaoItemStats * stats, void* attrib, void* Func, const char*, const char*)) GetProcAddress(h, "RegisterChaoFruit");
 		RegisterDataFunc = (void (*)(void* ptr))GetProcAddress(h, "RegisterDataFunc");
